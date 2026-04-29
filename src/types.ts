@@ -1,11 +1,22 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 export type ProcessType = 'DCM' | 'RH' | 'RSE';
 
-export interface StatCardProps {
+export interface ApprovalStep {
   label: string;
-  value: string | number;
-  subValue?: string;
-  trend?: string;
-  color?: string;
+  role: string;
+  status: 'pending' | 'completed' | 'current';
+  date?: string;
+}
+
+export interface RequestHistory {
+  status: string;
+  updatedBy: string;
+  updatedAt: string;
+  comment?: string;
 }
 
 export interface Request {
@@ -15,6 +26,10 @@ export interface Request {
   status: string;
   statusColor: string;
   date: string;
+  description?: string;
+  applicant: string;
+  approvalSteps: ApprovalStep[];
+  history: RequestHistory[];
 }
 
 export interface Product {
@@ -24,4 +39,10 @@ export interface Product {
   conditionnement: string;
   stock: number;
   requested: number;
+}
+
+export interface UserPreferences {
+  emailNotifications: boolean;
+  pushNotifications: boolean;
+  approvalAlerts: boolean;
 }
