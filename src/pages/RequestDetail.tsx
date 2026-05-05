@@ -108,6 +108,54 @@ export const RequestDetail = () => {
             </div>
           </section>
 
+          {/* SAP Details (if available) */}
+          {request.sapDetails && (
+            <section className="bg-orange-50/20 rounded-3xl p-8 border border-orange-100 shadow-sm space-y-6">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 bg-orange-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-orange-100">
+                  <FileText size={20} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 uppercase">Informations SAP (BC Émis)</h3>
+                  <p className="text-[10px] text-orange-600 font-bold uppercase tracking-widest">Édition Service Commande</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/50 p-6 rounded-2xl border border-orange-50">
+                <div>
+                  <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">N° Bon de Commande</p>
+                  <p className="text-sm font-mono font-black text-gray-900">{request.sapDetails.poNumber}</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Opérateur SAP</p>
+                  <p className="text-sm font-black text-gray-700">{request.sapDetails.operatorName}</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Date Échéance</p>
+                  <p className="text-sm font-black text-gray-700">{request.sapDetails.expiryDate}</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Centre Distribution</p>
+                  <p className="text-sm font-black text-gray-700">{request.sapDetails.distributionCenter}</p>
+                </div>
+                {request.sapDetails.sapClientCode && (
+                  <div>
+                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Code Client SAP</p>
+                    <p className="text-sm font-black text-gray-700">{request.sapDetails.sapClientCode}</p>
+                  </div>
+                )}
+                {request.sapDetails.signature && (
+                  <div className="md:col-span-2 pt-4 border-t border-orange-50">
+                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Signature Responsable</p>
+                    <div className="bg-white border border-gray-100 rounded-xl p-4 flex items-center justify-center">
+                       <img src={request.sapDetails.signature} alt="Signature" className="max-h-20 opacity-80" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
           {/* Historical Changes */}
           <section className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm space-y-6">
             <div className="flex items-center gap-3 mb-2">

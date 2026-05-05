@@ -28,7 +28,16 @@ export const RECENT_REQUESTS: Request[] = [
       { id: '2', sapCode: '3041', designation: 'EAU CRISTAL PET 1.5L C12', conditionnement: 'C12', stock: 100, requested: 3 }
     ],
     type: 'Commercial',
-    isUrgent: false
+    isUrgent: false,
+    sapDetails: {
+      poNumber: '5100540835',
+      distributionCenter: 'P015 BRAS USINE LUBUMBASHI',
+      operatorName: 'Fifi Mukonkole',
+      expiryDate: '2026-05-30',
+      clientReference: 'N°61935 BARCELOS OUV',
+      sapClientCode: '48583',
+      signature: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=='
+    }
   },
   { 
     id: 'RH-2026-00009', 
