@@ -22,7 +22,13 @@ export const RECENT_REQUESTS: Request[] = [
     ],
     history: [
       { status: 'Soumis', updatedBy: 'Francis Kabamba', updatedAt: '2026-04-12 08:30', comment: 'Demande urgente pour événement' }
-    ]
+    ],
+    products: [
+      { id: '1', sapCode: '2934', designation: 'BOOSTER GIN TONIC 50CL VC C20', conditionnement: 'C20', stock: 50, requested: 1 },
+      { id: '2', sapCode: '3041', designation: 'EAU CRISTAL PET 1.5L C12', conditionnement: 'C12', stock: 100, requested: 3 }
+    ],
+    type: 'Commercial',
+    isUrgent: false
   },
   { 
     id: 'RH-2026-00009', 
@@ -41,7 +47,12 @@ export const RECENT_REQUESTS: Request[] = [
     history: [
       { status: 'Soumis', updatedBy: 'Marie RH', updatedAt: '2026-04-14 10:15' },
       { status: 'Validé DRH', updatedBy: 'Directeur RH', updatedAt: '2026-04-14 14:00', comment: 'Dossier familial complet' }
-    ]
+    ],
+    products: [
+      { id: '3', sapCode: '5001', designation: 'BOOSTER GIN TONIC 50CL VC C20', conditionnement: 'C20', stock: 10, requested: 1 }
+    ],
+    type: 'Personnel',
+    isUrgent: false
   },
   { 
     id: 'RSE-2026-00004', 
@@ -57,7 +68,12 @@ export const RECENT_REQUESTS: Request[] = [
     ],
     history: [
       { status: 'Soumis', updatedBy: 'Sarah RSE', updatedAt: '2026-04-20 09:00', comment: 'Don social annuel' }
-    ]
+    ],
+    products: [
+      { id: '4', sapCode: '6001', designation: 'EAU CRISTAL PET 1.5L C12', conditionnement: 'C12', stock: 50, requested: 1 }
+    ],
+    type: 'Mécénat',
+    isUrgent: true
   },
 ];
 

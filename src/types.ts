@@ -30,6 +30,18 @@ export interface Request {
   applicant: string;
   approvalSteps: ApprovalStep[];
   history: RequestHistory[];
+  products: Product[];
+  isUrgent?: boolean;
+  type: 'Commercial' | 'Personnel' | 'Mécénat';
+  sapDetails?: {
+    poNumber?: string;
+    distributionCenter?: string;
+    operatorName?: string;
+    expiryDate?: string;
+    clientReference?: string;
+    sapClientCode?: string;
+    signature?: string;
+  };
 }
 
 export interface Product {

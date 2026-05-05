@@ -11,6 +11,8 @@ import { Dashboard } from './pages/Dashboard';
 import { NewRequest } from './pages/NewRequest';
 import { RequestDetail } from './pages/RequestDetail';
 import { Settings } from './pages/Settings';
+import Approvals from './pages/Approvals';
+import SAPEdition from './pages/SAPEdition';
 import { AnimatePresence } from 'motion/react';
 
 function App() {
@@ -24,16 +26,18 @@ function App() {
         <div className="flex-1 md:ml-64 flex flex-col min-h-screen relative overflow-x-hidden">
           <Header />
           
-          <main className="flex-1 flex flex-col relative w-full">
+          <main className="flex-1 flex flex-col relative w-full px-6 md:px-10">
             <AnimatePresence mode="wait">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/new" element={<NewRequest />} />
                 <Route path="/requests/:id" element={<RequestDetail />} />
+                <Route path="/approvals" element={<Approvals />} />
+                <Route path="/sap-edition" element={<SAPEdition />} />
                 <Route path="/settings" element={<Settings />} />
                 {/* Fallback routes */}
                 <Route path="/my-requests" element={<Dashboard />} />
-                <Route path="/approvals" element={<Dashboard />} />
+                <Route path="/history" element={<Dashboard />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </AnimatePresence>
